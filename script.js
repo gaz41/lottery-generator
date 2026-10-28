@@ -266,6 +266,7 @@ copyright.innerHTML =
   new Date().getFullYear() +
   ` <a href="https://www.gaz41.com">gaz41.com</a>. <span class="copy2">All Rights Reserved</span>`;
 
+// *************************
 // uncheck ALL radio buttons
 // document.querySelectorAll('input[type="radio"]').forEach((radio) => {
 //   radio.checked = false;
