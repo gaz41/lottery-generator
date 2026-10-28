@@ -1,0 +1,608 @@
+@import url("https://fonts.googleapis.com/css2?family=Rubik:ital,wght@0,300..900;1,300..900&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100..900;1,100..900&display=swap");
+
+:root {
+  --font1: "Rubik", sans-serif;
+  --font2: "Roboto", sans-serif;
+  --backgroundColor1: #99a3a3;
+  --letterSpacing: 0.7px;
+
+  --color1: #000000;
+  --color2: #000080;
+  --color3: #1432c8;
+  --color4: #333333;
+  --color5: #ebeffe;
+  --color6: #f3f5fe;
+  --color7: #ffffff;
+
+  --copyColor1: #99a3a3;
+  --copyColor1: #ffffff;
+  --copyColor2: #404040;
+  --copyColor3: #666666;
+  --copyColor4: #202020;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  background-color: var(--color7);
+  font-family: var(--font1);
+  overflow-y: scroll;
+  overflow-x: hidden;
+  scrollbar-width: thin;
+}
+
+.container {
+  min-height: 100dvh;
+  display: grid;
+  grid-template-rows: auto 1fr auto;
+  place-content: center;
+  padding: 0 20px;
+  letter-spacing: var(--letterSpacing);
+}
+
+.lottery-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  align-self: center;
+  justify-self: center;
+  background-color: var(--color6);
+  width: 80%;
+  border-radius: 24px;
+  padding-bottom: 60px;
+  margin-top: 40px;
+  box-shadow: rgba(0, 0, 128, 0.2) 0px 0px 16px;
+  position: relative;
+  z-index: 100;
+}
+
+.formText {
+  font-family: var(--font2);
+  font-size: 15px;
+  color: var(--color2);
+  font-weight: 400;
+  padding: 50px 4px 16px 4px;
+}
+
+h1 {
+  width: 100vw;
+  background-color: var(--color3);
+  color: var(--color7);
+  font-size: 22px;
+  letter-spacing: var(--letterSpacing);
+  text-align: center;
+  padding: 24px 14px;
+}
+
+label {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 24px;
+  height: 24px;
+  border: 2px solid var(--color2);
+  border-radius: 50%;
+  margin-right: 12px;
+}
+
+label:hover {
+  background-color: var(--color7);
+  border: 2px solid var(--color3);
+}
+
+label input {
+  display: none;
+}
+
+label span.ball {
+  display: inline-block;
+  width: calc(100% - 4px);
+  height: calc(100% - 4px);
+  background-color: var(--color2);
+  border-radius: 50%;
+  opacity: 0;
+  cursor: pointer;
+}
+
+label input:checked + span.ball {
+  opacity: 1;
+}
+
+.options {
+  padding: 0 50px;
+}
+
+.option {
+  display: flex;
+  align-items: center;
+  flex-direction: row;
+  padding-bottom: 12px;
+}
+
+.optionText {
+  font-family: var(--font2);
+  color: var(--color2);
+  font-size: 14px;
+  font-weight: 500;
+}
+
+.backgroundBox {
+  position: absolute;
+  top: 0px;
+  left: 0px;
+  min-height: 660px;
+  min-height: 80%;
+  width: 100%;
+  background-image: linear-gradient(to top, #1432c8, #000418);
+  box-shadow: 0px 7px 10px 2px rgba(89, 89, 89, 0.81);
+  -webkit-box-shadow: 0px 7px 10px 2px rgba(89, 89, 89, 0.81);
+  z-index: -100;
+}
+
+.lottoBg {
+  background-image: linear-gradient(to top, #ff0000, #581212);
+}
+
+.euromillionsBg {
+  background-image: linear-gradient(to top, #ffc400, #caba24);
+}
+
+.powerballBg {
+  background: linear-gradient(to top, #000040, #000000);
+}
+
+.setForLifeBg {
+  background-image: linear-gradient(to top, #00ffff, #0c4b41);
+}
+
+.thunderballBg {
+  background-image: linear-gradient(to top, #9300f3, #330b42);
+}
+
+.circle,
+.circle2 {
+  display: inline-block;
+  width: 42px;
+  height: 42px;
+  font-size: 18px;
+  font-weight: 600;
+  text-align: center;
+  border-radius: 50%;
+  line-height: 42px;
+  margin: 4px;
+}
+
+.circle2 {
+  position: relative;
+}
+
+.circle-lotto {
+  background-color: #fdc0c0;
+  color: #640101;
+}
+
+.circle-euromillions {
+  background-color: #fcde66;
+  color: #7f0000;
+}
+
+.circle-powerball {
+  background-color: #000000;
+  color: #ffffff;
+}
+
+.circle-set-for-life {
+  background-color: #b0f2f4;
+  color: #000080;
+}
+
+.circle-thunderball {
+  background-color: #e0ccff;
+  color: #530078;
+}
+
+.circle-lotto-hotpicks {
+  background-color: #fdc0c0;
+  color: #640101;
+}
+
+.circle-euromillions-hotpicks {
+  background-color: #fcde66;
+  color: #7f0000;
+}
+
+.circle2-euromillions {
+  background-color: #ffc400;
+  color: #000080;
+}
+
+.circle2-powerball {
+  background:
+    linear-gradient(0deg, rgba(0, 0, 0, 0.2) 0%, rgba(0, 0, 0, 0.2) 100%),
+    radial-gradient(
+      101.19% 101.19% at 71.59% 1.14%,
+      rgb(62, 8, 42) 32.13%,
+      rgb(114, 9, 23) 68.18%,
+      rgb(209, 13, 19) 100%
+    );
+  color: #ffffff;
+}
+
+.circle2-set-for-life {
+  background-color: #00d6da;
+  color: #000080;
+}
+
+.circle2-thunderball {
+  background-color: #6500a2;
+  color: #ffffff;
+}
+
+.circle2-suffix {
+  position: absolute;
+  top: -5px;
+  right: 0px;
+  width: 15px;
+  height: 15px;
+  border-radius: 50%;
+}
+
+.circle2-suffix-euromillions {
+  background-color: #d06a00;
+  border: 1px solid #ffffff;
+}
+
+.circle2-suffix-powerball {
+  background-color: #181782;
+  border: 1px solid #ffffff;
+}
+
+.circle2-suffix-set-for-life {
+  background-color: #049ba3;
+  border: 1px solid #ffffff;
+}
+
+.circle2-suffix-thunderball {
+  background-color: #b383fc;
+  border: 1px solid #ffffff;
+}
+
+svg {
+  padding-bottom: 2px;
+}
+
+.generateNumbers,
+.deleteNumbers {
+  display: none;
+  text-align: center;
+}
+
+.lottoGenBtn,
+.deleteBtn {
+  font-family: var(--font1);
+  background-color: var(--color2);
+  color: var(--color7);
+  font-weight: 600;
+  font-size: 16px;
+  letter-spacing: var(--letterSpacing);
+  height: 48px;
+  border: none;
+  border-radius: 24px;
+  padding: 8px 24px;
+  cursor: pointer;
+}
+
+.deleteBtn {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  background-color: transparent;
+  color: var(--color2);
+}
+
+.lottoGenBtn:hover {
+  background-color: var(--color3);
+}
+
+.deleteBtn:hover {
+  background-color: var(--color5);
+  color: var(--color3);
+  border: 1px solid rgba(20, 50, 200, 0.2);
+}
+
+.lottoGenText {
+  font-family: var(--font2);
+  color: var(--color2);
+  font-size: 14px;
+  font-weight: 400;
+  padding: 18px 0 8px 0;
+}
+
+.deleteBtnText {
+  padding: 0 0 0 8px;
+}
+
+.description {
+  background-color: var(--color7);
+  color: var(--color4);
+  line-height: 1.3;
+  min-height: 136px;
+  width: 255px;
+  padding: 12px;
+  border: 1px solid var(--color2);
+  border-left: 12px solid var(--color2);
+  border-radius: 10px;
+  margin: 24px 0 20px 0;
+}
+
+.lotteryNumbersContainer {
+  padding: 10px;
+  margin-top: 24px;
+}
+
+.lotterySelectedText {
+  background-color: var(--color5);
+  color: var(--color4);
+  padding: 12px;
+  border-top: 1px solid var(--color2);
+  border-left: 1px solid var(--color2);
+  border-right: 1px solid var(--color2);
+  border-top-left-radius: 10px;
+  border-top-right-radius: 10px;
+}
+
+.displayLotteryContainer {
+  display: none;
+  min-height: 80px;
+  width: auto;
+  background-color: var(--color7);
+  border-left: 1px solid var(--color2);
+  border-right: 1px solid var(--color2);
+  border-bottom: 1px solid var(--color2);
+  border-bottom-left-radius: 10px;
+  border-bottom-right-radius: 10px;
+  padding: 12px;
+  margin-bottom: 30px;
+}
+
+.description-title {
+  color: var(--color2);
+  font-weight: 600;
+  padding-bottom: 4px;
+}
+
+.hotpicks-range {
+  display: none;
+}
+
+.hotPicksContainer {
+  display: flex;
+  flex-direction: row;
+  margin-bottom: 12px;
+}
+
+.hotpicks-description {
+  font-family: var(--font2);
+  color: var(--color2);
+  font-size: 14px;
+  font-weight: 400;
+  padding-bottom: 2px;
+  margin-top: 18px;
+}
+
+.box {
+  width: 34px;
+  width: 44px;
+  border: 1px solid var(--color1);
+  text-align: center;
+  padding: 10px;
+  margin: 4px;
+  border-radius: 4px;
+  cursor: pointer;
+}
+
+.box:hover {
+  background-color: var(--color2);
+  color: var(--color7);
+}
+
+.highlight {
+  background-color: var(--color2);
+  color: var(--color7);
+  border-color: var(--color2);
+}
+
+.resultbox {
+  border: 1px solid var(--color1);
+}
+
+.msgText {
+  color: var(--color2);
+  font-weight: 500;
+}
+
+hr.line {
+  border-top: 1px dotted var(--color2);
+  margin: 6px 0;
+}
+
+hr.line:last-child {
+  border: none;
+  margin: 0;
+}
+
+.breakLn {
+  white-space: normal;
+}
+
+.copy {
+  background-color: var(--copyColor1);
+  color: var(--copyColor2);
+  font-family: var(--font2);
+  font-size: 14px;
+  text-align: center;
+  letter-spacing: var(--letterSpacing);
+  padding: 20px 0;
+  margin-top: 40px;
+}
+
+.copy a {
+  color: var(--copyColor2);
+  text-decoration: underline dotted;
+  text-decoration-color: var(--copyColor3);
+  text-decoration-thickness: 1.5px;
+  text-underline-offset: 6px;
+}
+
+.copy a:hover {
+  color: var(--copyColor2);
+  text-decoration-color: var(--copyColor4);
+}
+
+@media only screen and (max-width: 568px) {
+  .displayLotteryContainer {
+    width: 340px;
+  }
+
+  .options {
+    padding: 0 40px;
+  }
+}
+
+@media only screen and (max-width: 440px) {
+  .description {
+    width: 252px;
+  }
+
+  .break {
+    display: block;
+  }
+}
+
+@media only screen and (max-width: 424px) {
+  .lottery-container {
+    width: 340px;
+  }
+}
+
+@media only screen and (max-width: 398px) {
+  .copy {
+    padding: 6px 0;
+    line-height: 1.6;
+  }
+
+  .copy2 {
+    display: block;
+  }
+}
+
+@media only screen and (max-width: 386px) {
+  .lottery-container {
+    width: 340px;
+  }
+
+  .options {
+    padding: 0 20px;
+  }
+}
+
+@media only screen and (max-width: 370px) {
+  .optionsForm {
+    padding-left: 4px;
+  }
+
+  .hotPicksContainer {
+    padding-left: 10px;
+  }
+
+  .hotpicks-description {
+    padding: 0 14px;
+  }
+
+  .circle,
+  .circle2 {
+    width: 40px;
+    height: 40px;
+    font-size: 16px;
+    line-height: 40px;
+    margin: 4px;
+  }
+
+  .generateNumbers,
+  .deleteBtn {
+    font-size: 14px;
+  }
+}
+
+@media only screen and (max-width: 350px) {
+  h1 {
+    font-size: 18px;
+    width: auto;
+    text-wrap: wrap;
+  }
+
+  .lottery-container,
+  .lotterySelectedText,
+  .displayLotteryContainer {
+    border-radius: 0px;
+  }
+}
+
+@media only screen and (max-width: 320px) {
+  .container {
+    margin-bottom: 100px;
+  }
+
+  .circle,
+  .circle2 {
+    margin: 2px;
+  }
+
+  .description {
+    width: 250px;
+  }
+
+  .optionsForm {
+    padding-left: 10px;
+  }
+
+  .formText {
+    padding: 50px 0 16px 10px;
+  }
+
+  .optionText {
+    font-size: 14px;
+  }
+
+  .lottoGenBtn {
+    font-size: 15px;
+  }
+
+  .description-title {
+    font-size: 14px;
+  }
+
+  .hotPicksContainer {
+    flex-wrap: wrap;
+  }
+
+  .hotpicks-description {
+    margin-bottom: 4px;
+  }
+
+  .box {
+    margin: 2px;
+  }
+}
+
+/* Inspired by */
+/* https://www.national-lottery.co.uk/ */

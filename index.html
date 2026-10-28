@@ -1,0 +1,187 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link
+      rel="icon"
+      type="image/png"
+      sizes="32x32"
+      href="/images/favicon-1.png"
+    />
+    <link rel="stylesheet" href="style.css" />
+    <title>Lottery Number Generator</title>
+  </head>
+  <body>
+    <div class="container">
+      <header>
+        <div><h1>Lottery Number Generator</h1></div>
+      </header>
+
+      <main>
+        <div class="lottery-container">
+          <div class="options">
+            <div class="formText">Select a lottery draw game to play</div>
+            <form id="optionsForm" class="optionsForm">
+              <div class="option">
+                <label for="radio1">
+                  <input
+                    type="radio"
+                    name="options"
+                    id="radio1"
+                    value="LOTTO"
+                  />
+                  <span class="ball"></span>
+                </label>
+                <div class="optionText">LOTTO</div>
+              </div>
+              <div class="option">
+                <label for="radio2">
+                  <input
+                    type="radio"
+                    name="options"
+                    id="radio2"
+                    value="EUROMILLIONS"
+                  />
+                  <span class="ball"></span>
+                </label>
+                <div class="optionText">EUROMILLIONS</div>
+              </div>
+              <div class="option">
+                <label for="radio22">
+                  <input
+                    type="radio"
+                    name="options"
+                    id="radio22"
+                    value="POWERBALL"
+                  />
+                  <span class="ball"></span>
+                </label>
+                <div class="optionText">POWERBALL</div>
+              </div>
+              <div class="option">
+                <label for="radio3">
+                  <input
+                    type="radio"
+                    name="options"
+                    id="radio3"
+                    value="SET FOR LIFE"
+                  />
+                  <span class="ball"></span>
+                </label>
+                <div class="optionText">SET FOR LIFE</div>
+              </div>
+              <div class="option">
+                <label for="radio4">
+                  <input
+                    type="radio"
+                    name="options"
+                    id="radio4"
+                    value="THUNDERBALL"
+                  />
+                  <span class="ball"></span>
+                </label>
+                <div class="optionText">THUNDERBALL</div>
+              </div>
+              <div class="option">
+                <label for="radio5">
+                  <input
+                    type="radio"
+                    name="options"
+                    id="radio5"
+                    value="LOTTO HOTPICKS"
+                  />
+                  <span class="ball"></span>
+                </label>
+                <div class="optionText">LOTTO HOTPICKS</div>
+              </div>
+              <div class="option">
+                <label for="radio6">
+                  <input
+                    type="radio"
+                    name="options"
+                    id="radio6"
+                    value="EUROMILLIONS HOTPICKS"
+                  />
+                  <span class="ball"></span>
+                </label>
+                <div class="optionText">EUROMILLIONS HOTPICKS</div>
+              </div>
+            </form>
+          </div>
+
+          <!-- display lottery description -->
+          <div id="lotteryType"></div>
+
+          <div class="hotpicks-range" id="hotpicks-range">
+            <div class="hotpicks-description">
+              Pick how many numbers to match
+            </div>
+            <div class="hotPicksContainer">
+              <div class="box">1</div>
+              <div class="box">2</div>
+              <div class="box">3</div>
+              <div class="box">4</div>
+              <div class="box">5</div>
+            </div>
+          </div>
+
+          <!-- Generate Numbers button -->
+          <div class="generateNumbers" id="generateNumbers">
+            <div class="lottoGenText">Generate randomly selected numbers</div>
+            <button type="button" class="lottoGenBtn" id="lottoGenBtn">
+              Generate Numbers
+            </button>
+          </div>
+
+          <div class="lotteryNumbersContainer">
+            <!-- display message to page -->
+            <div id="lotterySelectedText" class="lotterySelectedText"></div>
+
+            <!-- display lottery numbers container to page -->
+            <div class="displayLotteryContainer" id="displayLotteryContainer">
+              <!-- display lottery numbers to page -->
+              <div id="displayBox">
+                <div id="displayLotteryNumbers"></div>
+              </div>
+            </div>
+          </div>
+
+          <!-- Delete button -->
+          <div class="deleteNumbers" id="deleteNumbers">
+            <button type="button" class="deleteBtn" id="deleteBtn">
+              <!-- trash can svg -->
+              <svg
+                width="19"
+                height="20"
+                viewBox="0 0 18 20"
+                fill="none"
+                xmlns="http://www.w3.org/2000/svg"
+                aria-hidden="true"
+              >
+                <path
+                  d="M7.5 16C7.76522 16 8.01957 15.8946 8.20711 15.7071C8.39464 15.5196 8.5 15.2652 8.5 15V9C8.5 8.73478 8.39464 8.48043 8.20711 8.29289C8.01957 8.10536 7.76522 8 7.5 8C7.23478 8 6.98043 8.10536 6.79289 8.29289C6.60536 8.48043 6.5 8.73478 6.5 9V15C6.5 15.2652 6.60536 15.5196 6.79289 15.7071C6.98043 15.8946 7.23478 16 7.5 16ZM17.5 4H13.5V3C13.5 2.20435 13.1839 1.44129 12.6213 0.87868C12.0587 0.316071 11.2956 0 10.5 0H8.5C7.70435 0 6.94129 0.316071 6.37868 0.87868C5.81607 1.44129 5.5 2.20435 5.5 3V4H1.5C1.23478 4 0.98043 4.10536 0.792893 4.29289C0.605357 4.48043 0.5 4.73478 0.5 5C0.5 5.26522 0.605357 5.51957 0.792893 5.70711C0.98043 5.89464 1.23478 6 1.5 6H2.5V17C2.5 17.7956 2.81607 18.5587 3.37868 19.1213C3.94129 19.6839 4.70435 20 5.5 20H13.5C14.2956 20 15.0587 19.6839 15.6213 19.1213C16.1839 18.5587 16.5 17.7956 16.5 17V6H17.5C17.7652 6 18.0196 5.89464 18.2071 5.70711C18.3946 5.51957 18.5 5.26522 18.5 5C18.5 4.73478 18.3946 4.48043 18.2071 4.29289C18.0196 4.10536 17.7652 4 17.5 4ZM7.5 3C7.5 2.73478 7.60536 2.48043 7.79289 2.29289C7.98043 2.10536 8.23478 2 8.5 2H10.5C10.7652 2 11.0196 2.10536 11.2071 2.29289C11.3946 2.48043 11.5 2.73478 11.5 3V4H7.5V3ZM14.5 17C14.5 17.2652 14.3946 17.5196 14.2071 17.7071C14.0196 17.8946 13.7652 18 13.5 18H5.5C5.23478 18 4.98043 17.8946 4.79289 17.7071C4.60536 17.5196 4.5 17.2652 4.5 17V6H14.5V17ZM11.5 16C11.7652 16 12.0196 15.8946 12.2071 15.7071C12.3946 15.5196 12.5 15.2652 12.5 15V9C12.5 8.73478 12.3946 8.48043 12.2071 8.29289C12.0196 8.10536 11.7652 8 11.5 8C11.2348 8 10.9804 8.10536 10.7929 8.29289C10.6054 8.48043 10.5 8.73478 10.5 9V15C10.5 15.2652 10.6054 15.5196 10.7929 15.7071C10.9804 15.8946 11.2348 16 11.5 16Z"
+                  fill="currentColor"
+                ></path>
+              </svg>
+              <span class="deleteBtnText">Delete</span>
+            </button>
+          </div>
+        </div>
+
+        <!-- background colours -->
+        <div id="backgroundBox" class="backgroundBox"></div>
+      </main>
+
+      <!-- copyright info -->
+      <footer>
+        <div id="copy" class="copy"></div>
+      </footer>
+    </div>
+
+    <script src="script.js"></script>
+  </body>
+</html>
+
+<!-- inspired by -->
+<!-- https://www.national-lottery.co.uk/ -->
